@@ -14,7 +14,7 @@
 *.pdb
 *.rc
 *.res
-*.so
+#*.so
 *.so.*
 *~
 .directory
