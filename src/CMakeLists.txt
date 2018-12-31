@@ -1,3 +1,6 @@
+message("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+message("XX /src/CMakeList.txt - add_sbdirectory ( ... )")
+
 add_subdirectory( Common )
 set( LINK_TO_Common FenestrationCommon )
 

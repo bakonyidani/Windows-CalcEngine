@@ -30,6 +30,7 @@ endmacro()
 # Create test targets
 macro( CREATE_TEST_TARGETS_WCE BASE_NAME SRC DEPENDENCIES )
   if( BUILD_WCE_TESTING )
+    #message("xx cmake/WCEProjectMacros.cmake - CREATE_TEST_TARGET_WCE")
     add_executable( ${BASE_NAME}_tests ${SRC} )
 
     if( ENABLE_GTEST_DEBUG_MODE )

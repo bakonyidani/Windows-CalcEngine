@@ -19,6 +19,7 @@
 *~
 .directory
 .DS_Store
+*.make
 
 # ignore python
 *.pyc
@@ -30,6 +31,11 @@ build
 builds
 Build
 Builds
+*build*
+*google*
+UILD_WCE_TESTING=OFF
+UIL_WCE_TESTING=OFF
+CMakeFiles
 
 # App-specific project files, for example, for Geany IDE:
 *.geany
