@@ -23,7 +23,7 @@ target_link_libraries( ${target_name} ${LINK_TO_Common} )
 #  LIBRARY DESTINATION lib
 #  ARCHIVE DESTINATION lib
 #)
-message("${PROJECT_BINARY_DIR}")
+#message("${PROJECT_BINARY_DIR}")
 
 # create shared library with the boost.python wrapper to be imported into Python
 if( NOT BUILD_WCE_TESTING )
@@ -33,7 +33,7 @@ if( NOT BUILD_WCE_TESTING )
 	set_target_properties(BPPGasLib PROPERTIES PREFIX "")
 	install (TARGETS BPPGasLib RUNTIME DESTINATION ${PROJECT_BINARY_DIR}/bin
 		LIBRARY DESTINATION ${PROJECT_BINARY_DIR}/lib
-		ARCHIVE DESTINATION ${PROJECT_BINARY_DIR}/lib) 
+		ARCHIVE DESTINATION ${PROJECT_BINARY_DIR}/lib)
 endif()#if( NOT BUILD_WCE_TESTING)
 
 if( BUILD_WCE_TESTING )

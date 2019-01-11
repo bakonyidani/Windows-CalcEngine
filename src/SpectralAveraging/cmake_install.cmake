@@ -1,4 +1,4 @@
-# Install script for directory: /home/dani/Soft/Window/Windows-CalcEngine/src/SpectralAveraging
+# Install script for directory: /home/ariadne/Windows-CalcEngine/src/SpectralAveraging
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,6 +38,6 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/dani/Soft/Window/Windows-CalcEngine/src/SpectralAveraging/libSpectralAveraging.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/ariadne/Windows-CalcEngine/src/SpectralAveraging/libSpectralAveraging.a")
 endif()
 

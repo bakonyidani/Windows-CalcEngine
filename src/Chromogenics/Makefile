@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /home/ariadne/anaconda3/envs/artheseus/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /home/ariadne/anaconda3/envs/artheseus/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dani/Soft/Window/Windows-CalcEngine
+CMAKE_SOURCE_DIR = /home/ariadne/Windows-CalcEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dani/Soft/Window/Windows-CalcEngine
+CMAKE_BINARY_DIR = /home/ariadne/Windows-CalcEngine
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,59 +59,37 @@ CMAKE_BINARY_DIR = /home/dani/Soft/Window/Windows-CalcEngine
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target list_install_components
@@ -124,16 +102,38 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/home/ariadne/anaconda3/envs/artheseus/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(CMAKE_COMMAND) -E cmake_progress_start /home/dani/Soft/Window/Windows-CalcEngine/CMakeFiles /home/dani/Soft/Window/Windows-CalcEngine/src/Chromogenics/CMakeFiles/progress.marks
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Chromogenics/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dani/Soft/Window/Windows-CalcEngine/CMakeFiles 0
+	cd /home/ariadne/Windows-CalcEngine && $(CMAKE_COMMAND) -E cmake_progress_start /home/ariadne/Windows-CalcEngine/CMakeFiles /home/ariadne/Windows-CalcEngine/src/Chromogenics/CMakeFiles/progress.marks
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Chromogenics/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ariadne/Windows-CalcEngine/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Chromogenics/clean
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Chromogenics/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,22 +143,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Chromogenics/preinstall
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Chromogenics/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Chromogenics/preinstall
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Chromogenics/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ariadne/Windows-CalcEngine && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/Chromogenics/CMakeFiles/Chromogenics.dir/rule:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Chromogenics/CMakeFiles/Chromogenics.dir/rule
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Chromogenics/CMakeFiles/Chromogenics.dir/rule
 .PHONY : src/Chromogenics/CMakeFiles/Chromogenics.dir/rule
 
 # Convenience name for target.
@@ -168,7 +168,7 @@ Chromogenics: src/Chromogenics/CMakeFiles/Chromogenics.dir/rule
 
 # fast build rule for target.
 Chromogenics/fast:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Chromogenics/CMakeFiles/Chromogenics.dir/build.make src/Chromogenics/CMakeFiles/Chromogenics.dir/build
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Chromogenics/CMakeFiles/Chromogenics.dir/build.make src/Chromogenics/CMakeFiles/Chromogenics.dir/build
 .PHONY : Chromogenics/fast
 
 src/ThermochromicSurface.o: src/ThermochromicSurface.cpp.o
@@ -177,7 +177,7 @@ src/ThermochromicSurface.o: src/ThermochromicSurface.cpp.o
 
 # target to build an object file
 src/ThermochromicSurface.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Chromogenics/CMakeFiles/Chromogenics.dir/build.make src/Chromogenics/CMakeFiles/Chromogenics.dir/src/ThermochromicSurface.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Chromogenics/CMakeFiles/Chromogenics.dir/build.make src/Chromogenics/CMakeFiles/Chromogenics.dir/src/ThermochromicSurface.cpp.o
 .PHONY : src/ThermochromicSurface.cpp.o
 
 src/ThermochromicSurface.i: src/ThermochromicSurface.cpp.i
@@ -186,7 +186,7 @@ src/ThermochromicSurface.i: src/ThermochromicSurface.cpp.i
 
 # target to preprocess a source file
 src/ThermochromicSurface.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Chromogenics/CMakeFiles/Chromogenics.dir/build.make src/Chromogenics/CMakeFiles/Chromogenics.dir/src/ThermochromicSurface.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Chromogenics/CMakeFiles/Chromogenics.dir/build.make src/Chromogenics/CMakeFiles/Chromogenics.dir/src/ThermochromicSurface.cpp.i
 .PHONY : src/ThermochromicSurface.cpp.i
 
 src/ThermochromicSurface.s: src/ThermochromicSurface.cpp.s
@@ -195,7 +195,7 @@ src/ThermochromicSurface.s: src/ThermochromicSurface.cpp.s
 
 # target to generate assembly for a file
 src/ThermochromicSurface.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Chromogenics/CMakeFiles/Chromogenics.dir/build.make src/Chromogenics/CMakeFiles/Chromogenics.dir/src/ThermochromicSurface.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Chromogenics/CMakeFiles/Chromogenics.dir/build.make src/Chromogenics/CMakeFiles/Chromogenics.dir/src/ThermochromicSurface.cpp.s
 .PHONY : src/ThermochromicSurface.cpp.s
 
 # Help Target
@@ -206,11 +206,11 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... Chromogenics"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... Chromogenics"
 	@echo "... src/ThermochromicSurface.o"
 	@echo "... src/ThermochromicSurface.i"
 	@echo "... src/ThermochromicSurface.s"
@@ -225,6 +225,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ariadne/Windows-CalcEngine && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

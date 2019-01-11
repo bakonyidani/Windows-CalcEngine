@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /home/ariadne/anaconda3/envs/artheseus/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /home/ariadne/anaconda3/envs/artheseus/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dani/Soft/Window/Windows-CalcEngine
+CMAKE_SOURCE_DIR = /home/ariadne/Windows-CalcEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dani/Soft/Window/Windows-CalcEngine
+CMAKE_BINARY_DIR = /home/ariadne/Windows-CalcEngine
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,42 +59,31 @@ CMAKE_BINARY_DIR = /home/dani/Soft/Window/Windows-CalcEngine
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -102,16 +91,27 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/home/ariadne/anaconda3/envs/artheseus/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target list_install_components
@@ -126,14 +126,14 @@ list_install_components/fast: list_install_components
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(CMAKE_COMMAND) -E cmake_progress_start /home/dani/Soft/Window/Windows-CalcEngine/CMakeFiles /home/dani/Soft/Window/Windows-CalcEngine/src/SpectralAveraging/CMakeFiles/progress.marks
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/SpectralAveraging/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dani/Soft/Window/Windows-CalcEngine/CMakeFiles 0
+	cd /home/ariadne/Windows-CalcEngine && $(CMAKE_COMMAND) -E cmake_progress_start /home/ariadne/Windows-CalcEngine/CMakeFiles /home/ariadne/Windows-CalcEngine/src/SpectralAveraging/CMakeFiles/progress.marks
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/SpectralAveraging/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ariadne/Windows-CalcEngine/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/SpectralAveraging/clean
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/SpectralAveraging/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,22 +143,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/SpectralAveraging/preinstall
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/SpectralAveraging/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/SpectralAveraging/preinstall
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/SpectralAveraging/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ariadne/Windows-CalcEngine && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/rule:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/rule
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/rule
 .PHONY : src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/rule
 
 # Convenience name for target.
@@ -168,7 +168,7 @@ SpectralAveraging: src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/rule
 
 # fast build rule for target.
 SpectralAveraging/fast:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build
 .PHONY : SpectralAveraging/fast
 
 src/AngularMeasurements.o: src/AngularMeasurements.cpp.o
@@ -177,7 +177,7 @@ src/AngularMeasurements.o: src/AngularMeasurements.cpp.o
 
 # target to build an object file
 src/AngularMeasurements.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularMeasurements.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularMeasurements.cpp.o
 .PHONY : src/AngularMeasurements.cpp.o
 
 src/AngularMeasurements.i: src/AngularMeasurements.cpp.i
@@ -186,7 +186,7 @@ src/AngularMeasurements.i: src/AngularMeasurements.cpp.i
 
 # target to preprocess a source file
 src/AngularMeasurements.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularMeasurements.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularMeasurements.cpp.i
 .PHONY : src/AngularMeasurements.cpp.i
 
 src/AngularMeasurements.s: src/AngularMeasurements.cpp.s
@@ -195,7 +195,7 @@ src/AngularMeasurements.s: src/AngularMeasurements.cpp.s
 
 # target to generate assembly for a file
 src/AngularMeasurements.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularMeasurements.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularMeasurements.cpp.s
 .PHONY : src/AngularMeasurements.cpp.s
 
 src/AngularProperties.o: src/AngularProperties.cpp.o
@@ -204,7 +204,7 @@ src/AngularProperties.o: src/AngularProperties.cpp.o
 
 # target to build an object file
 src/AngularProperties.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularProperties.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularProperties.cpp.o
 .PHONY : src/AngularProperties.cpp.o
 
 src/AngularProperties.i: src/AngularProperties.cpp.i
@@ -213,7 +213,7 @@ src/AngularProperties.i: src/AngularProperties.cpp.i
 
 # target to preprocess a source file
 src/AngularProperties.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularProperties.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularProperties.cpp.i
 .PHONY : src/AngularProperties.cpp.i
 
 src/AngularProperties.s: src/AngularProperties.cpp.s
@@ -222,7 +222,7 @@ src/AngularProperties.s: src/AngularProperties.cpp.s
 
 # target to generate assembly for a file
 src/AngularProperties.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularProperties.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularProperties.cpp.s
 .PHONY : src/AngularProperties.cpp.s
 
 src/AngularSpectralSample.o: src/AngularSpectralSample.cpp.o
@@ -231,7 +231,7 @@ src/AngularSpectralSample.o: src/AngularSpectralSample.cpp.o
 
 # target to build an object file
 src/AngularSpectralSample.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularSpectralSample.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularSpectralSample.cpp.o
 .PHONY : src/AngularSpectralSample.cpp.o
 
 src/AngularSpectralSample.i: src/AngularSpectralSample.cpp.i
@@ -240,7 +240,7 @@ src/AngularSpectralSample.i: src/AngularSpectralSample.cpp.i
 
 # target to preprocess a source file
 src/AngularSpectralSample.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularSpectralSample.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularSpectralSample.cpp.i
 .PHONY : src/AngularSpectralSample.cpp.i
 
 src/AngularSpectralSample.s: src/AngularSpectralSample.cpp.s
@@ -249,7 +249,7 @@ src/AngularSpectralSample.s: src/AngularSpectralSample.cpp.s
 
 # target to generate assembly for a file
 src/AngularSpectralSample.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularSpectralSample.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/AngularSpectralSample.cpp.s
 .PHONY : src/AngularSpectralSample.cpp.s
 
 src/MeasuredSampleData.o: src/MeasuredSampleData.cpp.o
@@ -258,7 +258,7 @@ src/MeasuredSampleData.o: src/MeasuredSampleData.cpp.o
 
 # target to build an object file
 src/MeasuredSampleData.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/MeasuredSampleData.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/MeasuredSampleData.cpp.o
 .PHONY : src/MeasuredSampleData.cpp.o
 
 src/MeasuredSampleData.i: src/MeasuredSampleData.cpp.i
@@ -267,7 +267,7 @@ src/MeasuredSampleData.i: src/MeasuredSampleData.cpp.i
 
 # target to preprocess a source file
 src/MeasuredSampleData.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/MeasuredSampleData.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/MeasuredSampleData.cpp.i
 .PHONY : src/MeasuredSampleData.cpp.i
 
 src/MeasuredSampleData.s: src/MeasuredSampleData.cpp.s
@@ -276,7 +276,7 @@ src/MeasuredSampleData.s: src/MeasuredSampleData.cpp.s
 
 # target to generate assembly for a file
 src/MeasuredSampleData.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/MeasuredSampleData.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/MeasuredSampleData.cpp.s
 .PHONY : src/MeasuredSampleData.cpp.s
 
 src/NIRRatio.o: src/NIRRatio.cpp.o
@@ -285,7 +285,7 @@ src/NIRRatio.o: src/NIRRatio.cpp.o
 
 # target to build an object file
 src/NIRRatio.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/NIRRatio.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/NIRRatio.cpp.o
 .PHONY : src/NIRRatio.cpp.o
 
 src/NIRRatio.i: src/NIRRatio.cpp.i
@@ -294,7 +294,7 @@ src/NIRRatio.i: src/NIRRatio.cpp.i
 
 # target to preprocess a source file
 src/NIRRatio.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/NIRRatio.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/NIRRatio.cpp.i
 .PHONY : src/NIRRatio.cpp.i
 
 src/NIRRatio.s: src/NIRRatio.cpp.s
@@ -303,7 +303,7 @@ src/NIRRatio.s: src/NIRRatio.cpp.s
 
 # target to generate assembly for a file
 src/NIRRatio.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/NIRRatio.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/NIRRatio.cpp.s
 .PHONY : src/NIRRatio.cpp.s
 
 src/SpectralSample.o: src/SpectralSample.cpp.o
@@ -312,7 +312,7 @@ src/SpectralSample.o: src/SpectralSample.cpp.o
 
 # target to build an object file
 src/SpectralSample.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/SpectralSample.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/SpectralSample.cpp.o
 .PHONY : src/SpectralSample.cpp.o
 
 src/SpectralSample.i: src/SpectralSample.cpp.i
@@ -321,7 +321,7 @@ src/SpectralSample.i: src/SpectralSample.cpp.i
 
 # target to preprocess a source file
 src/SpectralSample.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/SpectralSample.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/SpectralSample.cpp.i
 .PHONY : src/SpectralSample.cpp.i
 
 src/SpectralSample.s: src/SpectralSample.cpp.s
@@ -330,7 +330,7 @@ src/SpectralSample.s: src/SpectralSample.cpp.s
 
 # target to generate assembly for a file
 src/SpectralSample.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/SpectralSample.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/SpectralSample.cpp.s
 .PHONY : src/SpectralSample.cpp.s
 
 src/SpectrumFunctions.o: src/SpectrumFunctions.cpp.o
@@ -339,7 +339,7 @@ src/SpectrumFunctions.o: src/SpectrumFunctions.cpp.o
 
 # target to build an object file
 src/SpectrumFunctions.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/SpectrumFunctions.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/SpectrumFunctions.cpp.o
 .PHONY : src/SpectrumFunctions.cpp.o
 
 src/SpectrumFunctions.i: src/SpectrumFunctions.cpp.i
@@ -348,7 +348,7 @@ src/SpectrumFunctions.i: src/SpectrumFunctions.cpp.i
 
 # target to preprocess a source file
 src/SpectrumFunctions.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/SpectrumFunctions.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/SpectrumFunctions.cpp.i
 .PHONY : src/SpectrumFunctions.cpp.i
 
 src/SpectrumFunctions.s: src/SpectrumFunctions.cpp.s
@@ -357,7 +357,7 @@ src/SpectrumFunctions.s: src/SpectrumFunctions.cpp.s
 
 # target to generate assembly for a file
 src/SpectrumFunctions.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/SpectrumFunctions.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/build.make src/SpectralAveraging/CMakeFiles/SpectralAveraging.dir/src/SpectrumFunctions.cpp.s
 .PHONY : src/SpectrumFunctions.cpp.s
 
 # Help Target
@@ -368,11 +368,11 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... install"
-	@echo "... SpectralAveraging"
 	@echo "... list_install_components"
+	@echo "... SpectralAveraging"
 	@echo "... src/AngularMeasurements.o"
 	@echo "... src/AngularMeasurements.i"
 	@echo "... src/AngularMeasurements.s"
@@ -405,6 +405,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ariadne/Windows-CalcEngine && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

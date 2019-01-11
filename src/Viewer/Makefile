@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /home/ariadne/anaconda3/envs/artheseus/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /home/ariadne/anaconda3/envs/artheseus/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dani/Soft/Window/Windows-CalcEngine
+CMAKE_SOURCE_DIR = /home/ariadne/Windows-CalcEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dani/Soft/Window/Windows-CalcEngine
+CMAKE_BINARY_DIR = /home/ariadne/Windows-CalcEngine
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,37 +59,37 @@ CMAKE_BINARY_DIR = /home/dani/Soft/Window/Windows-CalcEngine
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target list_install_components
@@ -102,21 +102,10 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/ariadne/anaconda3/envs/artheseus/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -124,16 +113,27 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/home/ariadne/anaconda3/envs/artheseus/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(CMAKE_COMMAND) -E cmake_progress_start /home/dani/Soft/Window/Windows-CalcEngine/CMakeFiles /home/dani/Soft/Window/Windows-CalcEngine/src/Viewer/CMakeFiles/progress.marks
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Viewer/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dani/Soft/Window/Windows-CalcEngine/CMakeFiles 0
+	cd /home/ariadne/Windows-CalcEngine && $(CMAKE_COMMAND) -E cmake_progress_start /home/ariadne/Windows-CalcEngine/CMakeFiles /home/ariadne/Windows-CalcEngine/src/Viewer/CMakeFiles/progress.marks
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Viewer/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ariadne/Windows-CalcEngine/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Viewer/clean
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Viewer/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,22 +143,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Viewer/preinstall
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Viewer/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Viewer/preinstall
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Viewer/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ariadne/Windows-CalcEngine && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/Viewer/CMakeFiles/Viewer.dir/rule:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Viewer/CMakeFiles/Viewer.dir/rule
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f CMakeFiles/Makefile2 src/Viewer/CMakeFiles/Viewer.dir/rule
 .PHONY : src/Viewer/CMakeFiles/Viewer.dir/rule
 
 # Convenience name for target.
@@ -168,7 +168,7 @@ Viewer: src/Viewer/CMakeFiles/Viewer.dir/rule
 
 # fast build rule for target.
 Viewer/fast:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/build
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/build
 .PHONY : Viewer/fast
 
 src/Geometry2D.o: src/Geometry2D.cpp.o
@@ -177,7 +177,7 @@ src/Geometry2D.o: src/Geometry2D.cpp.o
 
 # target to build an object file
 src/Geometry2D.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Geometry2D.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Geometry2D.cpp.o
 .PHONY : src/Geometry2D.cpp.o
 
 src/Geometry2D.i: src/Geometry2D.cpp.i
@@ -186,7 +186,7 @@ src/Geometry2D.i: src/Geometry2D.cpp.i
 
 # target to preprocess a source file
 src/Geometry2D.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Geometry2D.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Geometry2D.cpp.i
 .PHONY : src/Geometry2D.cpp.i
 
 src/Geometry2D.s: src/Geometry2D.cpp.s
@@ -195,7 +195,7 @@ src/Geometry2D.s: src/Geometry2D.cpp.s
 
 # target to generate assembly for a file
 src/Geometry2D.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Geometry2D.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Geometry2D.cpp.s
 .PHONY : src/Geometry2D.cpp.s
 
 src/Geometry2DBeam.o: src/Geometry2DBeam.cpp.o
@@ -204,7 +204,7 @@ src/Geometry2DBeam.o: src/Geometry2DBeam.cpp.o
 
 # target to build an object file
 src/Geometry2DBeam.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Geometry2DBeam.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Geometry2DBeam.cpp.o
 .PHONY : src/Geometry2DBeam.cpp.o
 
 src/Geometry2DBeam.i: src/Geometry2DBeam.cpp.i
@@ -213,7 +213,7 @@ src/Geometry2DBeam.i: src/Geometry2DBeam.cpp.i
 
 # target to preprocess a source file
 src/Geometry2DBeam.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Geometry2DBeam.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Geometry2DBeam.cpp.i
 .PHONY : src/Geometry2DBeam.cpp.i
 
 src/Geometry2DBeam.s: src/Geometry2DBeam.cpp.s
@@ -222,7 +222,7 @@ src/Geometry2DBeam.s: src/Geometry2DBeam.cpp.s
 
 # target to generate assembly for a file
 src/Geometry2DBeam.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Geometry2DBeam.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Geometry2DBeam.cpp.s
 .PHONY : src/Geometry2DBeam.cpp.s
 
 src/Point2D.o: src/Point2D.cpp.o
@@ -231,7 +231,7 @@ src/Point2D.o: src/Point2D.cpp.o
 
 # target to build an object file
 src/Point2D.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Point2D.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Point2D.cpp.o
 .PHONY : src/Point2D.cpp.o
 
 src/Point2D.i: src/Point2D.cpp.i
@@ -240,7 +240,7 @@ src/Point2D.i: src/Point2D.cpp.i
 
 # target to preprocess a source file
 src/Point2D.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Point2D.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Point2D.cpp.i
 .PHONY : src/Point2D.cpp.i
 
 src/Point2D.s: src/Point2D.cpp.s
@@ -249,7 +249,7 @@ src/Point2D.s: src/Point2D.cpp.s
 
 # target to generate assembly for a file
 src/Point2D.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Point2D.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Point2D.cpp.s
 .PHONY : src/Point2D.cpp.s
 
 src/PolarPoint2D.o: src/PolarPoint2D.cpp.o
@@ -258,7 +258,7 @@ src/PolarPoint2D.o: src/PolarPoint2D.cpp.o
 
 # target to build an object file
 src/PolarPoint2D.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/PolarPoint2D.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/PolarPoint2D.cpp.o
 .PHONY : src/PolarPoint2D.cpp.o
 
 src/PolarPoint2D.i: src/PolarPoint2D.cpp.i
@@ -267,7 +267,7 @@ src/PolarPoint2D.i: src/PolarPoint2D.cpp.i
 
 # target to preprocess a source file
 src/PolarPoint2D.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/PolarPoint2D.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/PolarPoint2D.cpp.i
 .PHONY : src/PolarPoint2D.cpp.i
 
 src/PolarPoint2D.s: src/PolarPoint2D.cpp.s
@@ -276,7 +276,7 @@ src/PolarPoint2D.s: src/PolarPoint2D.cpp.s
 
 # target to generate assembly for a file
 src/PolarPoint2D.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/PolarPoint2D.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/PolarPoint2D.cpp.s
 .PHONY : src/PolarPoint2D.cpp.s
 
 src/Segment2D.o: src/Segment2D.cpp.o
@@ -285,7 +285,7 @@ src/Segment2D.o: src/Segment2D.cpp.o
 
 # target to build an object file
 src/Segment2D.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Segment2D.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Segment2D.cpp.o
 .PHONY : src/Segment2D.cpp.o
 
 src/Segment2D.i: src/Segment2D.cpp.i
@@ -294,7 +294,7 @@ src/Segment2D.i: src/Segment2D.cpp.i
 
 # target to preprocess a source file
 src/Segment2D.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Segment2D.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Segment2D.cpp.i
 .PHONY : src/Segment2D.cpp.i
 
 src/Segment2D.s: src/Segment2D.cpp.s
@@ -303,7 +303,7 @@ src/Segment2D.s: src/Segment2D.cpp.s
 
 # target to generate assembly for a file
 src/Segment2D.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Segment2D.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/Segment2D.cpp.s
 .PHONY : src/Segment2D.cpp.s
 
 src/ViewSegment2D.o: src/ViewSegment2D.cpp.o
@@ -312,7 +312,7 @@ src/ViewSegment2D.o: src/ViewSegment2D.cpp.o
 
 # target to build an object file
 src/ViewSegment2D.cpp.o:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/ViewSegment2D.cpp.o
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/ViewSegment2D.cpp.o
 .PHONY : src/ViewSegment2D.cpp.o
 
 src/ViewSegment2D.i: src/ViewSegment2D.cpp.i
@@ -321,7 +321,7 @@ src/ViewSegment2D.i: src/ViewSegment2D.cpp.i
 
 # target to preprocess a source file
 src/ViewSegment2D.cpp.i:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/ViewSegment2D.cpp.i
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/ViewSegment2D.cpp.i
 .PHONY : src/ViewSegment2D.cpp.i
 
 src/ViewSegment2D.s: src/ViewSegment2D.cpp.s
@@ -330,7 +330,7 @@ src/ViewSegment2D.s: src/ViewSegment2D.cpp.s
 
 # target to generate assembly for a file
 src/ViewSegment2D.cpp.s:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/ViewSegment2D.cpp.s
+	cd /home/ariadne/Windows-CalcEngine && $(MAKE) -f src/Viewer/CMakeFiles/Viewer.dir/build.make src/Viewer/CMakeFiles/Viewer.dir/src/ViewSegment2D.cpp.s
 .PHONY : src/ViewSegment2D.cpp.s
 
 # Help Target
@@ -341,11 +341,11 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... Viewer"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... Viewer"
 	@echo "... src/Geometry2D.o"
 	@echo "... src/Geometry2D.i"
 	@echo "... src/Geometry2D.s"
@@ -375,6 +375,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/dani/Soft/Window/Windows-CalcEngine && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ariadne/Windows-CalcEngine && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

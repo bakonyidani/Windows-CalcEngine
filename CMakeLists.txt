@@ -6,6 +6,9 @@ set( BOOST_ROOT $ENV{HOME}/anaconda3/envs/artheseus )
 set( BOOST_INCLUDEDIR $ENV{HOME}/anaconda3/envs/artheseus/include )
 set( BOOST_LIBRARYDIR $ENV{HOME}/anaconda3/envs/artheseus/lib/boost )
 set( BOOST_NO_SYSTEM_PATHS ON )
+message("BOOST_ROOT: ${BOOST_ROOT} ")
+message("BOOST_INCLUDEDIR: ${BOOST_INCLUDEDIR}")
+message("BOOST_LIBRARYFIR: ${BOOST_LIBRARYDIR}")
 
 project( ${target_name} )
 

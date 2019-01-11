@@ -1,4 +1,4 @@
-# Install script for directory: /home/dani/Soft/Window/Windows-CalcEngine/src
+# Install script for directory: /home/ariadne/Windows-CalcEngine/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,14 +39,14 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/dani/Soft/Window/Windows-CalcEngine/src/Common/cmake_install.cmake")
-  include("/home/dani/Soft/Window/Windows-CalcEngine/src/Gases/cmake_install.cmake")
-  include("/home/dani/Soft/Window/Windows-CalcEngine/src/Tarcog/cmake_install.cmake")
-  include("/home/dani/Soft/Window/Windows-CalcEngine/src/SpectralAveraging/cmake_install.cmake")
-  include("/home/dani/Soft/Window/Windows-CalcEngine/src/Viewer/cmake_install.cmake")
-  include("/home/dani/Soft/Window/Windows-CalcEngine/src/SingleLayerOptics/cmake_install.cmake")
-  include("/home/dani/Soft/Window/Windows-CalcEngine/src/MultiLayerOptics/cmake_install.cmake")
-  include("/home/dani/Soft/Window/Windows-CalcEngine/src/Chromogenics/cmake_install.cmake")
+  include("/home/ariadne/Windows-CalcEngine/src/Common/cmake_install.cmake")
+  include("/home/ariadne/Windows-CalcEngine/src/Gases/cmake_install.cmake")
+  include("/home/ariadne/Windows-CalcEngine/src/Tarcog/cmake_install.cmake")
+  include("/home/ariadne/Windows-CalcEngine/src/SpectralAveraging/cmake_install.cmake")
+  include("/home/ariadne/Windows-CalcEngine/src/Viewer/cmake_install.cmake")
+  include("/home/ariadne/Windows-CalcEngine/src/SingleLayerOptics/cmake_install.cmake")
+  include("/home/ariadne/Windows-CalcEngine/src/MultiLayerOptics/cmake_install.cmake")
+  include("/home/ariadne/Windows-CalcEngine/src/Chromogenics/cmake_install.cmake")
 
 endif()
 

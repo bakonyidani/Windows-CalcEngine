@@ -25,7 +25,7 @@ class BPPGas
                 bool temperatureSet;
 	public:
 		BPPGas(){
-		  this->gasTypeSet = false;			
+		  this->gasTypeSet = false;
                   this->temperatureSet = false;
 		  this->gasPropertiesCalculated = false;
 		}//BPPGas
@@ -33,20 +33,20 @@ class BPPGas
 		void setPureGas(std::string gasTypeStr){
 		  if ( gasTypeStr.compare("Air") == 0 ){
 		       this->thisGas = CGas();
-                       this->gasTypeSet = true;
+           this->gasTypeSet = true;
 		  } else if (gasTypeStr.compare("Argon") == 0){
 		       this->thisGas = CGas();
 		       this->thisGas.addGasItem(1.0,GasDef::Argon);
-                       this->gasTypeSet = true;
+           this->gasTypeSet = true;
 		  } else if (gasTypeStr.compare("Krypton") == 0){
 		       this->thisGas = CGas();
 		       this->thisGas.addGasItem(1.0,GasDef::Krypton);
 		       this->gasTypeSet = true;
-                  } else if (gasTypeStr.compare("Xenon") == 0){
+      } else if (gasTypeStr.compare("Xenon") == 0){
 		       this->thisGas = CGas();
 		       this->thisGas.addGasItem(1.0,GasDef::Xenon);
-	               this->gasTypeSet = true;
-                  }//if (...)
+	         this->gasTypeSet = true;
+      }//if (...)
 		}//setPureGas
 
 		void setTemperatureAndPressure(double teta, double p){
@@ -54,8 +54,8 @@ class BPPGas
 		}//setTemperatureAndPressure
 
 		void getSimpleGasProperties(){
-		  if(this->gasTypeSet){ 
-		    this->thisGasProperties = this->thisGas.getSimpleGasProperties(); 
+		  if(this->gasTypeSet){
+		    this->thisGasProperties = this->thisGas.getSimpleGasProperties();
 		    this->gasPropertiesCalculated = true;
 		  }
 		}//getSimpleGasProperties
@@ -68,7 +68,7 @@ class BPPGas
 		}//getGasProperties
 
 		void printProperties(){
-		  if((this->gasTypeSet) && (this->gasPropertiesCalculated)){ 
+		  if((this->gasTypeSet) && (this->gasPropertiesCalculated)){
                     std::cout << "Molecular Weight: " << this->thisGasProperties.m_MolecularWeight << std::endl;
 		    std::cout << "Thermal conductivity: " << this->thisGasProperties.m_ThermalConductivity << std::endl;
 	            std::cout << "Viscosity: " << this->thisGasProperties.m_Viscosity << std::endl;
@@ -78,7 +78,7 @@ class BPPGas
 		    std::cout << "Prandtl Number: " << this->thisGasProperties.m_PrandlNumber << std::endl;
                   }
                 }//printProperties
-		
+
 		boost::python::list returnGasPropertiesList(){
 		  boost::python::list array;
                   array.append( this->thisGasProperties.m_MolecularWeight );
@@ -90,7 +90,7 @@ class BPPGas
                   array.append( this->thisGasProperties.m_PrandlNumber );
 	          return array;
 		}//retunGasPropertiesList
-		
+
 };//class BPPGas
 
 //Boost.python wrapper
