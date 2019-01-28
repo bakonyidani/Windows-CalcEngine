@@ -13,7 +13,6 @@ private:
   bool set;
   bool solved;
   //general inputs
-
   double pressure;
   double windowWidth;
   double windowHeight;

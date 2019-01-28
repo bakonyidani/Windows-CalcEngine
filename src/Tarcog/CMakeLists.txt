@@ -2,7 +2,7 @@
 
 message("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 set( target_name Tarcog )
-message("xx /src/Gases/CMakeLists - target_name: ${target_name}")
+message("xx /src/Tarcog/CMakeLists - target_name: ${target_name}")
 
 # first include header files of this project itself
 # include_directories( include )

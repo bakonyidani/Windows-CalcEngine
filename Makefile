@@ -248,6 +248,19 @@ Viewer/fast:
 .PHONY : Viewer/fast
 
 #=============================================================================
+# Target rules for targets named BPPSLOLib
+
+# Build rule for target.
+BPPSLOLib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BPPSLOLib
+.PHONY : BPPSLOLib
+
+# fast build rule for target.
+BPPSLOLib/fast:
+	$(MAKE) -f src/SingleLayerOptics/CMakeFiles/BPPSLOLib.dir/build.make src/SingleLayerOptics/CMakeFiles/BPPSLOLib.dir/build
+.PHONY : BPPSLOLib/fast
+
+#=============================================================================
 # Target rules for targets named SingleLayerOptics
 
 # Build rule for target.
@@ -305,6 +318,7 @@ help:
 	@echo "... Tarcog"
 	@echo "... SpectralAveraging"
 	@echo "... Viewer"
+	@echo "... BPPSLOLib"
 	@echo "... SingleLayerOptics"
 	@echo "... MultiLayerOptics"
 	@echo "... Chromogenics"

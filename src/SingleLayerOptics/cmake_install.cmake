@@ -41,3 +41,34 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/ariadne/Windows-CalcEngine/src/SingleLayerOptics/libSingleLayerOptics.a")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}/home/ariadne/Windows-CalcEngine/lib/BPPSLOLib.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/ariadne/Windows-CalcEngine/lib/BPPSLOLib.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}/home/ariadne/Windows-CalcEngine/lib/BPPSLOLib.so"
+         RPATH "")
+  endif()
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/ariadne/Windows-CalcEngine/lib/BPPSLOLib.so")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+file(INSTALL DESTINATION "/home/ariadne/Windows-CalcEngine/lib" TYPE SHARED_LIBRARY FILES "/home/ariadne/Windows-CalcEngine/src/SingleLayerOptics/BPPSLOLib.so")
+  if(EXISTS "$ENV{DESTDIR}/home/ariadne/Windows-CalcEngine/lib/BPPSLOLib.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/ariadne/Windows-CalcEngine/lib/BPPSLOLib.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}/home/ariadne/Windows-CalcEngine/lib/BPPSLOLib.so"
+         OLD_RPATH "/home/ariadne/anaconda3/envs/artheseus/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/ariadne/Windows-CalcEngine/lib/BPPSLOLib.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+

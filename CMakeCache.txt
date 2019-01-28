@@ -249,9 +249,6 @@ PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
 SINGLE_PROJECT:BOOL=OFF
 
 //Dependencies for the target
-SingleLayerOptics_LIB_DEPENDS:STATIC=general;FenestrationCommon;general;Viewer;general;SpectralAveraging;
-
-//Dependencies for the target
 SpectralAveraging_LIB_DEPENDS:STATIC=general;FenestrationCommon;
 
 //Dependencies for the target
